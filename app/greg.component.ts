@@ -1,6 +1,6 @@
 
 import { Component, Input } from 'angular2/core';
-import { getPic } from './getPic';
+import { GetPicService } from './getPic.service';
 
 @Component({
     selector: 'greg',
@@ -26,13 +26,19 @@ import { getPic } from './getPic';
         .glyphicon-heart {
             color: deeppink;
         }
-    `]
+    `],
+    providers: [GetPicService]
 })
 
 export class GregComponent {
     @Input() totalLikes = 0;
     @Input() iLike = false;
-    @Input() myClass = "glyphicon-arrow-right"
+    @Input() myClass = "glyphicon-arrow-right";
+    pics = []
+
+    constructor(getPicService : GetPicService){
+        this.pics = this.getPicService.getPic()
+    }
 
     onClick(){
         this.myClass = 'glyphicon-arrow-left';

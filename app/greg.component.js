@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './getPic.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,19 +10,24 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, getPic_service_1;
     var GregComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (getPic_service_1_1) {
+                getPic_service_1 = getPic_service_1_1;
             }],
         execute: function() {
             GregComponent = (function () {
-                function GregComponent() {
+                function GregComponent(getPicService) {
                     this.totalLikes = 0;
                     this.iLike = false;
                     this.myClass = "glyphicon-arrow-right";
+                    this.pics = [];
+                    this.pics = this.getPicService.getPic();
                 }
                 GregComponent.prototype.onClick = function () {
                     this.myClass = 'glyphicon-arrow-left';
@@ -45,11 +50,13 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Component({
                         selector: 'greg',
                         template: "\n    <div class=\"media\">\n        <div class=\"media-left\">\n            <a href=\"#\">\n                <img class=\"media-object\" src=\"http://lorempixel.com/100/100/people?1\" alt=\"buttheads\">\n            </a>\n        </div>\n        <div class=\"media-body\">\n            <h4 class=\"media-heading\">Angular JS News</h4>\n            <ul>\n                <li>list1</li>\n                <li>list2</li>\n            </ul>\n            Media Body Here<br>\n            <i class=\"glyphicon glyphicon-heart\"></i>\n        </div>\n    </div>\n    ",
-                        styles: ["\n        .glyphicon-heart {\n            color: deeppink;\n        }\n    "]
+                        styles: ["\n        .glyphicon-heart {\n            color: deeppink;\n        }\n    "],
+                        providers: [getPic_service_1.GetPicService]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [(typeof (_a = typeof getPic_service_1.GetPicService !== 'undefined' && getPic_service_1.GetPicService) === 'function' && _a) || Object])
                 ], GregComponent);
                 return GregComponent;
+                var _a;
             }());
             exports_1("GregComponent", GregComponent);
         }
