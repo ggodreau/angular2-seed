@@ -1,6 +1,6 @@
 
 import { Component, Input } from 'angular2/core';
-import { GetPicService } from './getPic.service';
+import { GetPicService } from './getpic.service';
 
 @Component({
     selector: 'greg',
@@ -15,7 +15,8 @@ import { GetPicService } from './getPic.service';
             <h4 class="media-heading">Angular JS News</h4>
             <ul>
                 <li>list1</li>
-                <li>list2</li>
+                <li>{{ isHairy }}</li>
+                <li>{{ greg }}</li>
             </ul>
             Media Body Here<br>
             <i class="glyphicon glyphicon-heart"></i>
@@ -31,13 +32,18 @@ import { GetPicService } from './getPic.service';
 })
 
 export class GregComponent {
+    @Input() isHairy = ["yesHeIsnt"];
     @Input() totalLikes = 0;
     @Input() iLike = false;
     @Input() myClass = "glyphicon-arrow-right";
+    greg = 'foo';
     pics = []
 
+
     constructor(getPicService : GetPicService){
-        this.pics = this.getPicService.getPic()
+        this.pics = getPicService.getPic();
+        this.greg = getPicService.getGreg();
+//        this.gregWorld = this.getPicService.getGreg();
     }
 
     onClick(){
