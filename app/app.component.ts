@@ -8,6 +8,7 @@ import { BsPanel } from './bspanel.component';
 import { BsDropdown } from './dropdown.component';
 import { MyZippy } from './zippy.component';
 import { MyGippy } from './gippy.component';
+import { ContactFormComponent } from './contact-form.component';
 
 @Component({
     selector: 'my-app',
@@ -30,9 +31,9 @@ import { MyGippy } from './gippy.component';
             <span class="zipText">Hello Zippy!</span>
             <span class="gregText">Hello Greggy 1!</span>
             <span class="gregText2">Hello Greggy 2!</span>
-        </my-zippy>
-        -->
+        </my-zippy>-->
         <my-gippy></my-gippy>
+        <contact-form></contact-form>
     `,
     directives: [
         CoursesComponent,
@@ -43,7 +44,8 @@ import { MyGippy } from './gippy.component';
         BsPanel,
         BsDropdown,
         MyZippy,
-        MyGippy
+        MyGippy,
+        ContactFormComponent
     ]
 })
 export class AppComponent { }
