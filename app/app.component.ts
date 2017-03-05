@@ -9,6 +9,7 @@ import { BsDropdown } from './dropdown.component';
 import { MyZippy } from './zippy.component';
 import { MyGippy } from './gippy.component';
 import { ContactFormComponent } from './contact-form.component';
+import { SubscriptionFormComponent } from './subscription-form.component';
 
 @Component({
     selector: 'my-app',
@@ -22,18 +23,21 @@ import { ContactFormComponent } from './contact-form.component';
         <greg [isHairy] = 3></greg>
         <greg></greg>
         -->
+        <!--
         <bs-panel>
             <div class="heading">This is the heading!</div>
             <div class="panel">This is the panel!</div>
         </bs-panel>
+        -->
         <!--<bs-dropdown><div class="buttonText">Hello</div></bs-dropdown>
         <my-zippy>
             <span class="zipText">Hello Zippy!</span>
             <span class="gregText">Hello Greggy 1!</span>
             <span class="gregText2">Hello Greggy 2!</span>
-        </my-zippy>-->
+        </my-zippy>
         <my-gippy></my-gippy>
-        <contact-form></contact-form>
+        <contact-form></contact-form>-->
+        <subscription-form></subscription-form>
     `,
     directives: [
         CoursesComponent,
@@ -45,7 +49,8 @@ import { ContactFormComponent } from './contact-form.component';
         BsDropdown,
         MyZippy,
         MyGippy,
-        ContactFormComponent
+        ContactFormComponent,
+        SubscriptionFormComponent
     ]
 })
 export class AppComponent { }

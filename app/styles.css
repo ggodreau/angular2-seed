@@ -1,4 +1,10 @@
 
+/*
 .ng-touched.ng-invalid {
     border: 1px solid red;
 }
+
+.ng-dirty{
+    border: 1px dashed green;
+}
+*/

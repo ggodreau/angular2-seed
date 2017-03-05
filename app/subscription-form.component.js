@@ -11,30 +11,35 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var ContactFormComponent;
+    var SubscriptionFormComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            ContactFormComponent = (function () {
-                function ContactFormComponent() {
+            SubscriptionFormComponent = (function () {
+                function SubscriptionFormComponent() {
                 }
-                ContactFormComponent.prototype.onSubmit = function (x) {
+                SubscriptionFormComponent.prototype.toConsole = function (x) {
                     console.log(x);
                 };
-                ContactFormComponent = __decorate([
+                SubscriptionFormComponent.prototype.submitForm = function (control) {
+                    console.log(control);
+                    console.log("input 1 is: ", control.value.input1);
+                };
+                SubscriptionFormComponent = __decorate([
                     core_1.Component({
-                        selector: 'contact-form',
-                        templateUrl: 'app/contact-form.component.html'
+                        selector: 'subscription-form',
+                        templateUrl: 'app/subscription-form.component.html',
+                        styles: ["\n        .ng-touched.ng-invalid {\n            border: 1px solid yellow;\n            background-color: lightblue;\n        }\n\n        .gregstyle {\n            background-color: blue;\n        }\n    "]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], ContactFormComponent);
-                return ContactFormComponent;
+                ], SubscriptionFormComponent);
+                return SubscriptionFormComponent;
             }());
-            exports_1("ContactFormComponent", ContactFormComponent);
+            exports_1("SubscriptionFormComponent", SubscriptionFormComponent);
         }
     }
 });
-//# sourceMappingURL=contact-form.component.js.map
+//# sourceMappingURL=subscription-form.component.js.map
