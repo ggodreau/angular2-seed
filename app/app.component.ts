@@ -10,6 +10,7 @@ import { MyZippy } from './zippy.component';
 import { MyGippy } from './gippy.component';
 import { ContactFormComponent } from './contact-form.component';
 import { SubscriptionFormComponent } from './subscription-form.component';
+import { SignupFormComponent } from './signup-form.component';
 
 @Component({
     selector: 'my-app',
@@ -36,8 +37,9 @@ import { SubscriptionFormComponent } from './subscription-form.component';
             <span class="gregText2">Hello Greggy 2!</span>
         </my-zippy>
         <my-gippy></my-gippy>
-        <contact-form></contact-form>-->
-        <subscription-form></subscription-form>
+        <contact-form></contact-form>
+        <subscription-form></subscription-form>-->
+        <signup-form></signup-form>
     `,
     directives: [
         CoursesComponent,
@@ -50,7 +52,8 @@ import { SubscriptionFormComponent } from './subscription-form.component';
         MyZippy,
         MyGippy,
         ContactFormComponent,
-        SubscriptionFormComponent
+        SubscriptionFormComponent,
+        SignupFormComponent
     ]
 })
 export class AppComponent { }
