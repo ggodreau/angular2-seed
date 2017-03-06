@@ -22,7 +22,7 @@ export class SignupFormComponent {
             password: ['', Validators.required]
         });
     }
-
+// zomg commit test!
 //    form = new ControlGroup({
 //        username: new Control('', Validators.required),
 //        password: new Control('', Validators.required)
