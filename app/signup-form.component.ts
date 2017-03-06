@@ -11,19 +11,22 @@ import { UsernameValidators } from './usernameValidators';
             border: 1px solid red;
         }
         `],
-        directives: ['ControlGroup', 'Control']
+//        directives: ['ControlGroup', 'Control']
 })
 
 export class SignupFormComponent {
     form: ControlGroup;
-
+    
     constructor(fb: FormBuilder){
         this.form = fb.group({
-            username: ['', Validators.compose([
-                Validators.required,
-                UsernameValidators.cannotContainSpace
-            ])],
-            password: ['', Validators.required]
+            username:
+                ['This is my default value for username.', Validators.compose([
+                   Validators.required,
+                   UsernameValidators.cannotContainSpace
+                   ])
+               ],
+            password: 
+                ['', Validators.required]
         });
     }
 // zomg commit test2!
@@ -35,5 +38,6 @@ export class SignupFormComponent {
     signup(){
         console.log(this.form.value);
     }
+
 }
 

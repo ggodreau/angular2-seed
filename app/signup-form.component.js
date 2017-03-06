@@ -27,10 +27,11 @@ System.register(['angular2/core', 'angular2/common', './usernameValidators'], fu
             SignupFormComponent = (function () {
                 function SignupFormComponent(fb) {
                     this.form = fb.group({
-                        username: ['', common_1.Validators.compose([
+                        username: ['This is my default value for username.', common_1.Validators.compose([
                                 common_1.Validators.required,
                                 usernameValidators_1.UsernameValidators.cannotContainSpace
-                            ])],
+                            ])
+                        ],
                         password: ['', common_1.Validators.required]
                     });
                 }
@@ -47,7 +48,6 @@ System.register(['angular2/core', 'angular2/common', './usernameValidators'], fu
                         selector: 'signup-form',
                         templateUrl: 'app/signup-form.component.html',
                         styles: ["\n        .gregStyle {\n            border: 1px solid red;\n        }\n        "],
-                        directives: ['ControlGroup', 'Control']
                     }), 
                     __metadata('design:paramtypes', [common_1.FormBuilder])
                 ], SignupFormComponent);

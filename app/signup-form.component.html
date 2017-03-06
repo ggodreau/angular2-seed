@@ -29,7 +29,7 @@
             ngControl="password"
             #password="ngForm">
         <div 
-            *ngIf="!password.valid" 
+            *ngIf="!password.valid && password.touched" 
             class="alert alert-danger">
             Password is required.
         </div>
