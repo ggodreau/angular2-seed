@@ -27,10 +27,11 @@ System.register(['angular2/core', 'angular2/common', './usernameValidators'], fu
             SignupFormComponent = (function () {
                 function SignupFormComponent(fb) {
                     this.form = fb.group({
-                        username: ['This is my default value for username.', common_1.Validators.compose([
+                        username: ['', common_1.Validators.compose([
                                 common_1.Validators.required,
                                 usernameValidators_1.UsernameValidators.cannotContainSpace
-                            ])
+                            ]),
+                            usernameValidators_1.UsernameValidators.shouldBeUnique
                         ],
                         password: ['', common_1.Validators.required]
                     });
@@ -41,6 +42,9 @@ System.register(['angular2/core', 'angular2/common', './usernameValidators'], fu
                 //        password: new Control('', Validators.required)
                 //    });
                 SignupFormComponent.prototype.signup = function () {
+                    this.form.find('username').setErrors({
+                        invalidLogin: true
+                    });
                     console.log(this.form.value);
                 };
                 SignupFormComponent = __decorate([

@@ -20,10 +20,11 @@ export class SignupFormComponent {
     constructor(fb: FormBuilder){
         this.form = fb.group({
             username:
-                ['This is my default value for username.', Validators.compose([
+                ['', Validators.compose([
                    Validators.required,
                    UsernameValidators.cannotContainSpace
-                   ])
+                   ]),
+                   UsernameValidators.shouldBeUnique
                ],
             password: 
                 ['', Validators.required]
@@ -36,6 +37,9 @@ export class SignupFormComponent {
 //    });
 
     signup(){
+        this.form.find('username').setErrors({
+            invalidLogin: true
+        });
         console.log(this.form.value);
     }
 
