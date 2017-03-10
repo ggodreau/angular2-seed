@@ -1,4 +1,4 @@
-System.register(['angular2/core', './courses.component', './like.component', './greg.component', './caseswitch.component', './ngfor.component', './bspanel.component', './dropdown.component', './zippy.component', './gippy.component', './contact-form.component', './subscription-form.component', './signup-form.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './courses.component', './like.component', './greg.component', './caseswitch.component', './ngfor.component', './bspanel.component', './dropdown.component', './zippy.component', './gippy.component', './contact-form.component', './subscription-form.component', './signup-form.component', './change-password.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './courses.component', './like.component', './
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, courses_component_1, like_component_1, greg_component_1, caseswitch_component_1, ngfor_component_1, bspanel_component_1, dropdown_component_1, zippy_component_1, gippy_component_1, contact_form_component_1, subscription_form_component_1, signup_form_component_1;
+    var core_1, courses_component_1, like_component_1, greg_component_1, caseswitch_component_1, ngfor_component_1, bspanel_component_1, dropdown_component_1, zippy_component_1, gippy_component_1, contact_form_component_1, subscription_form_component_1, signup_form_component_1, change_password_component_1;
     var AppComponent;
     return {
         setters:[
@@ -52,6 +52,9 @@ System.register(['angular2/core', './courses.component', './like.component', './
             },
             function (signup_form_component_1_1) {
                 signup_form_component_1 = signup_form_component_1_1;
+            },
+            function (change_password_component_1_1) {
+                change_password_component_1 = change_password_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -60,7 +63,7 @@ System.register(['angular2/core', './courses.component', './like.component', './
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>Heading Section</h1>\n        <!--\n        <my-ngFor></my-ngFor>\n        <case-element></case-element>\n        <courses></courses>\n        <like></like>\n        <greg [isHairy] = 3></greg>\n        <greg></greg>\n        -->\n        <!--\n        <bs-panel>\n            <div class=\"heading\">This is the heading!</div>\n            <div class=\"panel\">This is the panel!</div>\n        </bs-panel>\n        -->\n        <!--<bs-dropdown><div class=\"buttonText\">Hello</div></bs-dropdown>\n        <my-zippy>\n            <span class=\"zipText\">Hello Zippy!</span>\n            <span class=\"gregText\">Hello Greggy 1!</span>\n            <span class=\"gregText2\">Hello Greggy 2!</span>\n        </my-zippy>\n        <my-gippy></my-gippy>\n        <contact-form></contact-form>\n        <subscription-form></subscription-form>-->\n        <signup-form></signup-form>\n    ",
+                        template: "\n        <h1>Heading Section</h1>\n        <!--\n        <my-ngFor></my-ngFor>\n        <case-element></case-element>\n        <courses></courses>\n        <like></like>\n        <greg [isHairy] = 3></greg>\n        <greg></greg>\n        -->\n        <!--\n        <bs-panel>\n            <div class=\"heading\">This is the heading!</div>\n            <div class=\"panel\">This is the panel!</div>\n        </bs-panel>\n        -->\n        <!--<bs-dropdown><div class=\"buttonText\">Hello</div></bs-dropdown>\n        <my-zippy>\n            <span class=\"zipText\">Hello Zippy!</span>\n            <span class=\"gregText\">Hello Greggy 1!</span>\n            <span class=\"gregText2\">Hello Greggy 2!</span>\n        </my-zippy>\n        <my-gippy></my-gippy>\n        <contact-form></contact-form>\n        <subscription-form></subscription-form>\n        <signup-form></signup-form>-->\n        <change-password></change-password>\n    ",
                         directives: [
                             courses_component_1.CoursesComponent,
                             like_component_1.LikeComponent,
@@ -73,7 +76,8 @@ System.register(['angular2/core', './courses.component', './like.component', './
                             gippy_component_1.MyGippy,
                             contact_form_component_1.ContactFormComponent,
                             subscription_form_component_1.SubscriptionFormComponent,
-                            signup_form_component_1.SignupFormComponent
+                            signup_form_component_1.SignupFormComponent,
+                            change_password_component_1.ChangePassword
                         ]
                     }), 
                     __metadata('design:paramtypes', [])
