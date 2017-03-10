@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/common'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/common', './passwordValidators'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/common'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, common_1;
+    var core_1, common_1, passwordValidators_1;
     var ChangePassword;
     return {
         setters:[
@@ -19,14 +19,20 @@ System.register(['angular2/core', 'angular2/common'], function(exports_1, contex
             },
             function (common_1_1) {
                 common_1 = common_1_1;
+            },
+            function (passwordValidators_1_1) {
+                passwordValidators_1 = passwordValidators_1_1;
             }],
         execute: function() {
-            // placeholder for customer validator function import
             ChangePassword = (function () {
                 function ChangePassword(fb) {
                     this.form = fb.group({
                         currentPassword: ['', common_1.Validators.required],
-                        newPassword: ['', common_1.Validators.required],
+                        newPassword: ['', common_1.Validators.compose([
+                                common_1.Validators.required,
+                                passwordValidators_1.PasswordValidators.minimumFiveCharacters
+                            ])
+                        ],
                         confirmPassword: ['', common_1.Validators.required]
                     });
                 }

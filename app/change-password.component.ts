@@ -1,6 +1,6 @@
 import { Component } from 'angular2/core';
 import { ControlGroup, Control, Validators, FormBuilder } from 'angular2/common';
-// placeholder for customer validator function import
+import { PasswordValidators } from './passwordValidators';
 
 @Component({
     selector: 'change-password',
@@ -13,7 +13,11 @@ export class ChangePassword {
     constructor(fb : FormBuilder){
         this.form = fb.group({
             currentPassword: ['', Validators.required],
-            newPassword: ['', Validators.required],
+            newPassword: ['', Validators.compose([
+                Validators.required,
+                PasswordValidators.minimumFiveCharacters
+                ])
+            ],
             confirmPassword: ['', Validators.required]
         });
     }
