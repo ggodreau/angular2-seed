@@ -9,8 +9,10 @@ System.register([], function(exports_1, context_1) {
                 function PasswordValidators() {
                 }
                 PasswordValidators.minimumFiveCharacters = function (control) {
-                    console.log("control =", control);
-                    console.log("control.value.length =", control.value.length);
+                    if (control.value.length < 5)
+                        return { passwordTooShort: true };
+                    //            console.log("password too short:", control.value.length);
+                    return null;
                 };
                 return PasswordValidators;
             }());
