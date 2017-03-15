@@ -2,6 +2,7 @@ import { Component } from 'angular2/core';
 import { ControlGroup, Control, Validators, FormBuilder } from 'angular2/common';
 import { PasswordValidators } from './passwordValidators';
 
+// note do not add directives to component; needs explanation
 @Component({
     selector: 'change-password',
     templateUrl: 'app/change-password.component.html',

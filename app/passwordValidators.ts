@@ -6,6 +6,6 @@ export class PasswordValidators {
         if (control.value.length < 5)
             return { passwordTooShort : true };
 //            console.log("password too short:", control.value.length);
-        return null;
+        return { passwordTooShort : false };
     }
 }

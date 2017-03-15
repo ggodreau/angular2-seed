@@ -12,7 +12,7 @@ System.register([], function(exports_1, context_1) {
                     if (control.value.length < 5)
                         return { passwordTooShort: true };
                     //            console.log("password too short:", control.value.length);
-                    return null;
+                    return { passwordTooShort: false };
                 };
                 return PasswordValidators;
             }());
