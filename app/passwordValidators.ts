@@ -8,4 +8,9 @@ export class PasswordValidators {
 //            console.log("password too short:", control.value.length);
         return { passwordTooShort : false };
     }
+    
+    static passwordMatch(control: Control){
+        console.log("password control =", control);
+    }
+
 }

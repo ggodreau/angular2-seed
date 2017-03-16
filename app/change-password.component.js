@@ -24,6 +24,7 @@ System.register(['angular2/core', 'angular2/common', './passwordValidators'], fu
                 passwordValidators_1 = passwordValidators_1_1;
             }],
         execute: function() {
+            // note do not add directives to component; needs explanation
             ChangePassword = (function () {
                 function ChangePassword(fb) {
                     this.form = fb.group({
@@ -33,9 +34,18 @@ System.register(['angular2/core', 'angular2/common', './passwordValidators'], fu
                                 passwordValidators_1.PasswordValidators.minimumFiveCharacters
                             ])
                         ],
-                        confirmPassword: ['', common_1.Validators.required]
+                        confirmPassword: ['', common_1.Validators.compose([
+                                common_1.Validators.required,
+                                passwordValidators_1.PasswordValidators.passwordMatch
+                            ])
+                        ]
                     });
+                    console.log("this form value = ", this.form.controls.currentPassword.value);
+                    console.log("this form = ", this.form);
                 }
+                ChangePassword.prototype.printPassword = function () {
+                    console.log(this.form.controls.currentPassword.value);
+                };
                 ChangePassword = __decorate([
                     core_1.Component({
                         selector: 'change-password',

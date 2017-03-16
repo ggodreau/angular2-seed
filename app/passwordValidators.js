@@ -14,6 +14,9 @@ System.register([], function(exports_1, context_1) {
                     //            console.log("password too short:", control.value.length);
                     return { passwordTooShort: false };
                 };
+                PasswordValidators.passwordMatch = function (control) {
+                    console.log("password control =", control);
+                };
                 return PasswordValidators;
             }());
             exports_1("PasswordValidators", PasswordValidators);

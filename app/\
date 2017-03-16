@@ -1,4 +1,3 @@
-<button (click)="printPassword()">click me</button>
 <form [ngFormModel]="form" (ngSubmit)="changePassword()">
 
     <!-- Current Password -->
@@ -11,7 +10,6 @@
             ngControl="currentPassword"
             #currentPassword="ngForm">
     </div>
-    <div>{{ currentPassword.value }}</div>
     <div
         *ngIf="currentPassword.touched">
         <div

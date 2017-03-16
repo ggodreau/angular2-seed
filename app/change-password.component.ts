@@ -19,8 +19,18 @@ export class ChangePassword {
                 PasswordValidators.minimumFiveCharacters
                 ])
             ],
-            confirmPassword: ['', Validators.required]
+            confirmPassword: ['', Validators.compose([
+                Validators.required,
+                PasswordValidators.passwordMatch
+                ])
+            ]
         });
+        console.log("this form value = ",this.form.controls.currentPassword.value);
+        console.log("this form = ",this.form);
+    }
+
+    printPassword(){
+        console.log(this.form.controls.currentPassword.value);
     }
 
 }
