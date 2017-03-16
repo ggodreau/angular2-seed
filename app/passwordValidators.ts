@@ -1,4 +1,4 @@
-import { Control } from 'angular2/common';
+import { Control, ControlGroup } from 'angular2/common';
 
 export class PasswordValidators {
 
@@ -9,8 +9,11 @@ export class PasswordValidators {
         return { passwordTooShort : false };
     }
     
-    static passwordMatch(control: Control){
-        console.log("password control =", control);
+    static passwordMatch(group: ControlGroup){
+//        var control1 = group.find(‘newPassword’);
+//        var control2 = group.find(‘confirmPassword’);
+//        console.log("controls = ",control1, control2);
+        console.log("password control group =", group);
     }
 
 }
