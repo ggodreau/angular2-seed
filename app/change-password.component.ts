@@ -13,12 +13,14 @@ export class ChangePassword {
 
     constructor(fb : FormBuilder){
         this.form = fb.group({
-            currentPassword: ['', Validators.required],
+            currentPassword: ['', Validators.compose([
+                Validators.required,
+                PasswordValidators.passwordIs1234
+                ])
+            ],
             newPassword: ['', Validators.compose([
                 Validators.required,
-                PasswordValidators.minimumFiveCharacters,
-//                passwordMatchValidator
-//                PasswordValidators.passwordMatch
+                PasswordValidators.minimumFiveCharacters
                 ])
             ],
             confirmPassword: ['', Validators.compose([
@@ -34,6 +36,7 @@ export class ChangePassword {
 
     changePassword(){
         console.log("passwords match? ",this.form.errors.passwordsDoMatch);
+        console.log("this.form = ",this.form);
 //        console.log("form.errors: ",this.form.errors);
 //        console.log("form: ",this.form);
     }

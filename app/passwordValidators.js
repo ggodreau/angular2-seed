@@ -14,9 +14,14 @@ System.register([], function(exports_1, context_1) {
                     console.log("password too short:", control.value.length);
                     return { passwordTooShort: false };
                 };
+                PasswordValidators.passwordIs1234 = function (control) {
+                    if (control.value != '1234')
+                        return { not1234: true };
+                    return null;
+                };
                 PasswordValidators.passwordMatch = function (group) {
-                    var control1 = group.find('currentPassword').value;
-                    var control2 = group.find('newPassword').value;
+                    var control1 = group.find('newPassword').value;
+                    var control2 = group.find('confirmPassword').value;
                     console.log("control1,control2: ", control1, control2);
                     if (control1 == control2)
                         return { passwordsDoMatch: true };

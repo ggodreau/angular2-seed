@@ -8,10 +8,16 @@ export class PasswordValidators {
             console.log("password too short:", control.value.length);
         return { passwordTooShort : false };
     }
+
+    static passwordIs1234(control: Control){
+        if (control.value != '1234')
+            return { not1234 : true }
+        return null;
+    }
     
     static passwordMatch(group: ControlGroup){
-        var control1 = group.find('currentPassword').value;
-        var control2 = group.find('newPassword').value;
+        var control1 = group.find('newPassword').value;
+        var control2 = group.find('confirmPassword').value;
 
         console.log("control1,control2: ", control1, control2);
 

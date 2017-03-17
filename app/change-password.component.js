@@ -28,10 +28,14 @@ System.register(['angular2/core', 'angular2/common', './passwordValidators'], fu
             ChangePassword = (function () {
                 function ChangePassword(fb) {
                     this.form = fb.group({
-                        currentPassword: ['', common_1.Validators.required],
+                        currentPassword: ['', common_1.Validators.compose([
+                                common_1.Validators.required,
+                                passwordValidators_1.PasswordValidators.passwordIs1234
+                            ])
+                        ],
                         newPassword: ['', common_1.Validators.compose([
                                 common_1.Validators.required,
-                                passwordValidators_1.PasswordValidators.minimumFiveCharacters,
+                                passwordValidators_1.PasswordValidators.minimumFiveCharacters
                             ])
                         ],
                         confirmPassword: ['', common_1.Validators.compose([
@@ -44,6 +48,7 @@ System.register(['angular2/core', 'angular2/common', './passwordValidators'], fu
                 }
                 ChangePassword.prototype.changePassword = function () {
                     console.log("passwords match? ", this.form.errors.passwordsDoMatch);
+                    console.log("this.form = ", this.form);
                     //        console.log("form.errors: ",this.form.errors);
                     //        console.log("form: ",this.form);
                 };
