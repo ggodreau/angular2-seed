@@ -32,18 +32,21 @@ System.register(['angular2/core', 'angular2/common', './passwordValidators'], fu
                         newPassword: ['', common_1.Validators.compose([
                                 common_1.Validators.required,
                                 passwordValidators_1.PasswordValidators.minimumFiveCharacters,
-                                passwordValidators_1.PasswordValidators.passwordMatch
                             ])
                         ],
                         confirmPassword: ['', common_1.Validators.compose([
                                 common_1.Validators.required,
-                                passwordValidators_1.PasswordValidators.passwordMatch
                             ])
                         ]
-                    }, { passwordMatchValidator: passwordValidators_1.PasswordValidators.passwordMatch });
+                    }, { validator: passwordValidators_1.PasswordValidators.passwordMatch });
                     //        console.log("this form value = ",this.form.controls.currentPassword.value);
                     //        console.log("this form = ",this.form);
                 }
+                ChangePassword.prototype.changePassword = function () {
+                    console.log("passwords match? ", this.form.errors.passwordsDoMatch);
+                    //        console.log("form.errors: ",this.form.errors);
+                    //        console.log("form: ",this.form);
+                };
                 ChangePassword = __decorate([
                     core_1.Component({
                         selector: 'change-password',

@@ -17,23 +17,25 @@ export class ChangePassword {
             newPassword: ['', Validators.compose([
                 Validators.required,
                 PasswordValidators.minimumFiveCharacters,
-                PasswordValidators.passwordMatch
+//                passwordMatchValidator
+//                PasswordValidators.passwordMatch
                 ])
             ],
             confirmPassword: ['', Validators.compose([
                 Validators.required,
-                PasswordValidators.passwordMatch
+//                passwordMatchValidator
+//                PasswordValidators.passwordMatch
                 ])
             ]
-        },
-        { passwordMatchValidator : PasswordValidators.passwordMatch }
-        );
+        },{ validator : PasswordValidators.passwordMatch });
 //        console.log("this form value = ",this.form.controls.currentPassword.value);
 //        console.log("this form = ",this.form);
     }
 
-//    printPassword(){
-//        console.log(this.form.controls.currentPassword.value);
-//    }
+    changePassword(){
+        console.log("passwords match? ",this.form.errors.passwordsDoMatch);
+//        console.log("form.errors: ",this.form.errors);
+//        console.log("form: ",this.form);
+    }
 
 }
