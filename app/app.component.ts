@@ -12,6 +12,9 @@ import { ContactFormComponent } from './contact-form.component';
 import { SubscriptionFormComponent } from './subscription-form.component';
 import { SignupFormComponent } from './signup-form.component';
 import { ChangePassword } from './change-password.component';
+import { ControlGroup, FormBuilder } from 'angular2/common';
+
+form: ControlGroup
 
 @Component({
     selector: 'my-app',
@@ -40,8 +43,9 @@ import { ChangePassword } from './change-password.component';
         <my-gippy></my-gippy>
         <contact-form></contact-form>
         <subscription-form></subscription-form>
-        <signup-form></signup-form>-->
+        <signup-form></signup-form>
         <change-password></change-password>
+        -->
     `,
     directives: [
         CoursesComponent,
